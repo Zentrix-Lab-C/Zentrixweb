@@ -65,7 +65,7 @@ const Ventures = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white overflow-hidden relative">
+    <div className="min-h-scree bg-gray-950 text-white overflow-hidden relative">
       {/* Background Elements with zoom animation */}
       <div className={`absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black transition-all duration-2000 ${
         isVisible ? 'scale-100' : 'scale-110'
@@ -218,27 +218,6 @@ const Ventures = () => {
               />
             </div>
           ))}
-        </div>
-
-        {/* Footer CTA with zoom entrance */}
-        <div
-          className={`text-center mt-20 transition-all duration-1500 delay-1000 ${
-            isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-50 translate-y-10'
-          }`}
-        >
-          <button
-            className={`px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-110 active:scale-95`}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'scale(1.1)';
-              e.target.style.boxShadow = '0 20px 40px rgba(0, 188, 212, 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'scale(1)';
-              e.target.style.boxShadow = 'none';
-            }}
-          >
-            Explore All Ventures
-          </button>
         </div>
       </div>
 

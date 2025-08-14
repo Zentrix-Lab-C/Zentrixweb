@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from "../assets/logo.png";
 
 const TeamPage = () => {
   const [visibleCards, setVisibleCards] = useState([]);
@@ -212,21 +211,6 @@ const TeamPage = () => {
       <div className={`hidden md:block absolute top-8 right-8 z-20 transform transition-all duration-1000 ease-out ${
         logoVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-8 scale-95'
       }`}>
-        <div className="bg-gray-800/50 backdrop-blur-xl border border-cyan-400/40 rounded-2xl p-5 min-w-[220px] hover:bg-gray-800/70 hover:border-cyan-400/60 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center border-2 border-cyan-400/60 transition-all duration-500 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-cyan-400/50">
-             <img src={logo} alt="Zentrix Logo" className="w-24 h-24 object-contain" />
-            </div>
-            <div>
-              <div className="text-white font-bold text-2xl tracking-wide">ZENTRIX</div>
-              <div className="text-cyan-400 text-sm font-semibold tracking-widest">LAB</div>
-            </div>
-          </div>
-          <div className="text-gray-300 text-sm font-medium">Smart Ideas. Real Impact. One Lab.</div>
-          
-          {/* Animated underline */}
-          <div className="mt-3 h-0.5 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
-        </div>
       </div>
 
       <div className="relative z-10 px-4 sm:px-6 py-8 sm:py-16">
@@ -252,7 +236,7 @@ const TeamPage = () => {
               index={0}
               colSpan="col-span-3"
               mobileColSpan="col-span-1"
-              aspectRatio="aspect-[4/5]"
+              // aspectRatio="aspect-[4/5]"
             />
 
             {/* Olagunju - Circular */}
@@ -261,7 +245,7 @@ const TeamPage = () => {
               index={1}
               colSpan="col-span-3"
               mobileColSpan="col-span-1"
-              aspectRatio="aspect-[4/6]"
+              // aspectRatio="aspect-[4/6]"
             />
 
             {/* Ayodele - Rectangle */}
@@ -270,7 +254,7 @@ const TeamPage = () => {
               index={2}
               colSpan="col-span-3"
               mobileColSpan="col-span-1"
-              aspectRatio="aspect-[4/5]"
+              // aspectRatio="aspect-[4/5]"
             />
 
             {/* Bada (CEO) - Tall Rectangle spanning 2 rows on desktop only */}
@@ -279,8 +263,8 @@ const TeamPage = () => {
               index={6}
               colSpan="col-span-3"
               mobileColSpan="col-span-1"
-              rowSpan={2}
-              aspectRatio="aspect-[4/7] lg:h-full"
+              // rowSpan={2}
+              aspectRatio=" lg:h-full"
             />
 
             {/* Gbadegesin - Rectangle */}
@@ -289,7 +273,7 @@ const TeamPage = () => {
               index={3}
               colSpan="col-span-3"
               mobileColSpan="col-span-1"
-              aspectRatio="aspect-[4/5]"
+              aspectRatio="w-full h-full"
             />
 
             {/* Usman - Rectangle */}
@@ -298,7 +282,7 @@ const TeamPage = () => {
               index={4}
               colSpan="col-span-3"
               mobileColSpan="col-span-1"
-              aspectRatio="aspect-[4/5]"
+              // aspectRatio="aspect-[4/5]"
             />
 
             {/* Victor - Rectangle */}
@@ -307,7 +291,7 @@ const TeamPage = () => {
               index={5}
               colSpan="col-span-3"
               mobileColSpan="col-span-1"
-               aspectRatio="aspect-[4/5]"
+              //  aspectRatio="aspect-[4/5]"
             />
           </div>
         </div>

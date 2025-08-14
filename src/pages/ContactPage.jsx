@@ -47,13 +47,13 @@ export default function ContactPage() {
   );
 
   const communityLinks = {
-  'LinkedIn': 'https://linkedin.com/in/YourProfile',
-  'X': 'https://x.com/zentrix_lab',
-  'Facebook': 'https://web.facebook.com/zentrixlab?rdid=vZv7eQWwBSZAx79R&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1Ar13AisKp%2F%3F_rdc%3D1%26_rdr#',
-  'Instagram': 'https://www.instagram.com/zentrixlab',
-  'Tik Tok': 'https://www.tiktok.com/@zentrixlab',
+  // 'LinkedIn': 'https://linkedin.com/in/YourProfile',
+  // 'X': 'https://x.com/zentrix_lab',
+  // 'Facebook': 'https://web.facebook.com/zentrixlab?rdid=vZv7eQWwBSZAx79R&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1Ar13AisKp%2F%3F_rdc%3D1%26_rdr#',
+  // 'Instagram': 'https://www.instagram.com/zentrixlab',
+  // 'Tik Tok': 'https://www.tiktok.com/@zentrixlab',
   'Discord': 'https://discord.com/invite/YZR3SBPp',
-  'Telegram': 'https://t.me/zentrix_official'
+  'Telegram': 'https://t.me/zentrixlab'
 };
 
 

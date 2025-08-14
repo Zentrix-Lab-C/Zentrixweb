@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed w-full top-10 left-0 z-50 transition-all duration-500 ${
+      <nav className={`fixed w-full top-1 left-0 z-50 transition-all duration-500 ${
         isScrolled ? 'bg-black/95 backdrop-blur-xl shadow-2xl shadow-cyan-500/10' : 'bg-gradient-to-r from-black via-gray-900 to-blue-900'
       }`}>
         
@@ -80,7 +80,7 @@ const Navbar = () => {
   {/* Logo Icon */}
   <div className="relative">
     <div className="w-16 h-16 bg-black rounded flex items-center justify-center">
-      <img src={logo} alt="Zentrix Logo" className="w-24 h-24 object-contain" />
+      <img src={logo} alt="Zentrix Logo" className="w-32 h-32 object-contain" />
     </div>
     {/* Glow effect */}
     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-all duration-300 -z-10" />
@@ -88,10 +88,10 @@ const Navbar = () => {
   
   {/* Logo Text */}
   <div className="flex flex-col leading-tight">
-    <span className="text-white font-bold text-xl tracking-wider transform transition-all duration-300 group-hover:scale-105">
+    <span className="text-white font-[Orbitron] text-xl tracking-wider transform transition-all duration-300 group-hover:scale-105">
       ZENTRIX
     </span>
-    <span className="text-gray-300 font-light text-sm tracking-widest -mt-1 transition-colors duration-300 group-hover:text-cyan-300">
+    <span className="text-gray-300 font-[Orbitron] text-sm tracking-widest -mt-1 transition-colors duration-300 group-hover:text-cyan-300">
       LAB
     </span>
   </div>

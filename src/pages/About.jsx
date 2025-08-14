@@ -91,7 +91,7 @@ const About = () => {
           className="text-center mb-16"
         >
           <motion.h2 
-            className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -231,14 +231,18 @@ const About = () => {
                   shaping the future through accessible AI, sovereign finance, digital
                   infrastructure and human-aligned robotics.
                 </p>
-                
-                <p className="text-gray-300">
+
+                <motion.p
+                  className="italic text-cyan-300 border-l-4 border-cyan-400/50 pl-4"
+                  initial={{ opacity: 0.7 }}
+                  whileHover={{ opacity: 1 }}
+                >
                   We envision a world where everyone has access to the power of
                   intelligence, autonomy, and ownership.
-                </p>
+                </motion.p>
               </motion.div>
             </motion.div>
-          </div>
+            </div>
 
           {/* Core Values */}
           <motion.div 
@@ -334,25 +338,7 @@ const About = () => {
             </motion.div>
           </motion.div>
 
-          {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-center pt-8"
-          >
-            <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300"
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(6, 182, 212, 0.3)"
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Join Our Vision
-            </motion.button>
-          </motion.div>
+         
         </motion.div>
       </div>
     </section>
