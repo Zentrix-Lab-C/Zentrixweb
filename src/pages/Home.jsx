@@ -51,7 +51,7 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => go("contact")}
-              className="w-full sm:w-auto px-6 py-3 rounded-full font-medium text-lg text-white bg-black border border-[#007BFF] ring-2 ring-[#007BFF]/60 hover:bg-[#007BFF] transition"
+              className="w-full sm:w-auto px-6 py- rounded-full font-medium text-lg text-white bg-black border border-[#007BFF] ring-2 ring-[#007BFF]/60 hover:bg-[#007BFF] transition"
             >
               Get In Touch
             </motion.button>

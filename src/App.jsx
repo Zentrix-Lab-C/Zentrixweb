@@ -3,7 +3,7 @@ import About from "./pages/About";
 import ContactPage from "./pages/ContactPage";
 import Home from "./pages/Home";
 import StartupCollaborationPage from "./pages/StartupCollaborationPage";
-import Team from "./pages/Team";
+import Team from "./pages/TeamPage";
 import Ventures from "./pages/Ventures";
 
 // App.js
