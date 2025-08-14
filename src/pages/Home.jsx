@@ -50,7 +50,7 @@ const Home = () => {
   <div className="relative w-full h-full flex items-center justify-center">
     {[...Array(3)].map((_, i) => {
       const angle = (i / 3) * 2 * Math.PI; // 0°, 120°, 240°
-      const radius = 400; // distance from center
+      const radius = 450; // distance from center
       const verticalOffset = -100; // moves entire triangle upward
       const x = radius * Math.cos(angle) + verticalOffset;
       const y = radius * Math.sin(angle);
@@ -88,11 +88,6 @@ const Home = () => {
     })}
   </div>
 </div>
-
-
-
-
-
 
 
        <div className="absolute inset-0">
@@ -250,14 +245,26 @@ const Home = () => {
           </h1>
         </div>
 
-        {/* Description */}
-        <div className={`max-w-3xl mx-auto mb-12 transform transition-all duration-1000 delay-300 ${textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
-            Zentrix lab is a multi-venture studio building nex gen product in Fintech,
-            <br className="hidden sm:block" />
-            Web3 community and digital services
-          </p>
-        </div>
+        <div className="space-y-6 text-2xl sm:text-3xl lg:text-4xl font-[Orbitron] tracking-wide mb-12">
+            <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+              <span className="text-gray-300">SMART </span>
+              <span className="text-white font-semibold">IDEAS</span>
+              <span className="text-cyan-400">.</span>
+            </div>
+            
+            <div className={`transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600 font-semibold">
+                REAL IMPACT
+              </span>
+              <span className="text-cyan-400">.</span>
+            </div>
+            
+            <div className={`transition-all duration-1000 delay-1100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <span className="text-gray-300">ONE </span>
+              <span className="text-white font-semibold">LAB</span>
+              <span className="text-cyan-400">.</span>
+            </div>
+          </div>
 
         {/* Buttons */}
      <div className={`flex flex-col sm:flex-row gap-6 sm:gap-12 transform transition-all duration-1000 delay-500 ${textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

@@ -53,7 +53,8 @@ export default function ContactPage() {
   // 'Instagram': 'https://www.instagram.com/zentrixlab',
   // 'Tik Tok': 'https://www.tiktok.com/@zentrixlab',
   'Discord': 'https://discord.com/invite/YZR3SBPp',
-  'Telegram': 'https://t.me/zentrixlab'
+  'Telegram': 'https://t.me/zentrixlab',
+  'WhatsApp': 'https://chat.whatsapp.com/CKJp55a1RNoCX2tZEtxmIR',
 };
 
 
@@ -256,7 +257,7 @@ export default function ContactPage() {
             </h2>
             
             <div className="space-y-3">
-  {['Venture', 'About', 'Team', 'Home'].map((item, index) => {
+  {['Home', 'About', 'Team', 'Venture'].map((item, index) => {
     // Map the display name to the actual section ID
     const sectionIds = {
       Home: 'home',

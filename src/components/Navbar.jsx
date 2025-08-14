@@ -31,8 +31,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", target: "home" },
-    { name: "Venture", target: "ventures" },
     { name: "About", target: "about" },
+    { name: "Venture", target: "ventures" },
     { name: "Team", target: "team" },
     { name: "Contact", target: "contact" },
   ];
