@@ -31,7 +31,7 @@ export default function StartupCollaborationPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 relative overflow-hidden">
+    <div className="min-h-scree bg-gradient-to-br from-gray-900 via-black to-gray-800 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Gradient Orbs */}
@@ -64,7 +64,8 @@ export default function StartupCollaborationPage() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
+     <div className="relative z-10 flex items-start justify-center min-h-[80vh] px-4 pt-16 pb-8">
+
         <div className={`max-w-4xl w-full text-center transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
@@ -148,10 +149,13 @@ export default function StartupCollaborationPage() {
 
           {/* CTA Button */}
          <a href="https://wa.me/qr/5F4Y5YHZUCCVK1" target="_blank" rel="noopener noreferrer">
-  <div className={`transition-all duration-1000 delay-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-    <button className="group relative px-12 py-4 text-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25">
+  <div 
+  className={`transition-all duration-1000 delay-700 ${
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+  }`}
+  style={{ marginBottom: 0 }}>
+
+    <button className="group relative px-12 py-3 text-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       <div className="relative flex items-center">

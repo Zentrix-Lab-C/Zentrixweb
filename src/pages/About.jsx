@@ -72,7 +72,7 @@ const About = () => {
   ];
 
   return (
-    <section className="bg-gray-950 text-white py-20 px-6 md:px-20 relative overflow-hidden">
+    <section className="bg-gray-950 text-white py-5 px-6 md:px-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
       <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />

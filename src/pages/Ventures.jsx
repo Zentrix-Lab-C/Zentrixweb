@@ -84,9 +84,9 @@ const Ventures = () => {
         isVisible ? 'opacity-100' : 'opacity-0'
       }`} />
 
-      <div className="relative z-10 container mx-auto px-6 py-16">
+      <div className="relative z-10 container mx-auto px-6 py-5">
         {/* Header with dramatic zoom in */}
-        <div className={`text-center mb-16 transition-all duration-1500 ${
+        <div className={`text-center mb-10 transition-all duration-1500 ${
           isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-50 translate-y-20'
         }`}>
           <h1 className={`text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent transition-all duration-2000 ${
