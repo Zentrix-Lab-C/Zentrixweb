@@ -76,10 +76,10 @@ const Navbar = () => {
         <div className="relative max-w-7xl mx-auto px-4 lg:px- flex justify-between items-center h-20">
           
           {/* Logo */}
-        <div className="flex items-center gap-3 group cursor-pointer">
+        <div className="flex items-center group cursor-pointer">
   {/* Logo Icon */}
   <div className="relative">
-    <div className="w-16 h-16 bg-black rounded flex items-center justify-center">
+    <div className="w-24 h-24 rounded flex items-center justify-center">
       <img src={logo} alt="Zentrix Logo" className="w-32 h-32 object-contain" />
     </div>
     {/* Glow effect */}

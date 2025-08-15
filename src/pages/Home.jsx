@@ -67,7 +67,7 @@ const Home = () => {
         >
           {/* Logo Icon */}
           <div className="relative">
-            <div className="w-16 h-16 bg-black/50 rounded flex items-center justify-center">
+            <div className="w-24 h-24 rounded flex items-center justify-center">
               <img
                 src={logo}
                 alt="Zentrix Logo"

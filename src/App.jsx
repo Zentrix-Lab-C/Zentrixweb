@@ -40,7 +40,7 @@ function App() {
       <section id="about"><About/></section>
       <section id="ventures"><Ventures/></section>
       <section id="team"><Team/></section>
-      {/* <section id="contact"><StartupCollaborationPage/></section> */}
+      <section id=""><StartupCollaborationPage/></section>
       <section id="contact"><ContactPage/></section>
 
       {/* Animated Scroll to Top Button */}
