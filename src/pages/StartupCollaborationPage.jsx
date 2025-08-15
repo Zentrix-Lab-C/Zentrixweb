@@ -149,20 +149,24 @@ export default function StartupCollaborationPage() {
           </div>
 
           {/* CTA Button */}
-          <div className={`transition-all duration-1000 delay-700 ${
+         <a href="https://chat.whatsapp.com/CKJp55a1RNoCX2tZEtxmIR" target="_blank" rel="noopener noreferrer">
+  <div className={`transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <button className="group relative px-12 py-4 text-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative flex items-center">
-                JOIN US
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
-              </div>
-              
-              {/* Button Shine Effect */}
-              <div className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse" />
-            </button>
-          </div>
+    <button className="group relative px-12 py-4 text-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      <div className="relative flex items-center">
+        JOIN US
+        <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
+      </div>
+
+      {/* Button Shine Effect */}
+      <div className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse" />
+    </button>
+  </div>
+</a>
+
         </div>
       </div>
 

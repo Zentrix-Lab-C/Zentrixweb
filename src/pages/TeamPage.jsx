@@ -17,7 +17,7 @@ const TeamPage = () => {
     {
       id: 2,
       name: "Olagunju Oluwatobi", 
-      role: "Lead Designer",
+      role: "Product Designer",
       image: "./assets/Ldesign.jpg", // You'll add the actual image path
       isCircular: true,
       bgColor: "from-blue-600 to-indigo-500"
