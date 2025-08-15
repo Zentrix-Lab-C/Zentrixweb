@@ -78,9 +78,7 @@ export default function StartupCollaborationPage() {
               </h1>
               <Sparkles className="text-cyan-400 ml-2 animate-pulse" size={24} />
             </div>
-            <div className="text-2xl md:text-3xl text-gray-300 font-light">
-              Product Co-creation
-            </div>
+           
           </div>
 
           {/* Main Content Grid */}
