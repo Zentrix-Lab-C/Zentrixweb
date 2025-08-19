@@ -148,7 +148,8 @@ export default function StartupCollaborationPage() {
           </div>
 
           {/* CTA Button */}
-         <a href="https://wa.me/qr/5F4Y5YHZUCCVK1" target="_blank" rel="noopener noreferrer">
+         {/* <a href="https://wa.me/qr/5F4Y5YHZUCCVK1" target="_blank" rel="noopener noreferrer"> */}
+         <a href="https://t.me/zentrixlab" target="_blank" rel="noopener noreferrer">
   <div 
   className={`transition-all duration-1000 delay-700 ${
     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
