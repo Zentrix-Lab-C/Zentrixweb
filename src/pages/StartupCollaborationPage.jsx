@@ -7,7 +7,7 @@ export default function StartupCollaborationPage() {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     const handleMouseMove = (e) => {
       setMousePosition({
         x: (e.clientX / window.innerWidth) * 100,
@@ -20,7 +20,7 @@ export default function StartupCollaborationPage() {
   }, []);
 
   const FloatingParticle = ({ delay, duration, size }) => (
-    <div 
+    <div
       className={`absolute rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 opacity-20 animate-pulse ${size}`}
       style={{
         animation: `float ${duration}s ease-in-out infinite ${delay}s`,
@@ -35,7 +35,7 @@ export default function StartupCollaborationPage() {
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Gradient Orbs */}
-        <div 
+        <div
           className="absolute w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-full blur-3xl transition-transform duration-1000"
           style={{
             transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
@@ -43,7 +43,7 @@ export default function StartupCollaborationPage() {
             top: '20%',
           }}
         />
-        <div 
+        <div
           className="absolute w-80 h-80 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl transition-transform duration-1000"
           style={{
             transform: `translate(${mousePosition.x * -0.015}px, ${mousePosition.y * -0.015}px)`,
@@ -51,10 +51,10 @@ export default function StartupCollaborationPage() {
             bottom: '20%',
           }}
         />
-        
+
         {/* Floating Particles */}
         {[...Array(8)].map((_, i) => (
-          <FloatingParticle 
+          <FloatingParticle
             key={i}
             delay={i * 0.5}
             duration={3 + i * 0.5}
@@ -64,12 +64,11 @@ export default function StartupCollaborationPage() {
       </div>
 
       {/* Main Content */}
-     <div className="relative z-10 flex items-start justify-center min-h-[80vh] px-4 pt-16 pb-8">
+      <div className="relative z-10 flex items-start justify-center min-h-[80vh] px-4 pt-16 pb-8">
 
-        <div className={`max-w-4xl w-full text-center transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          
+        <div className={`max-w-4xl w-full text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
+
           {/* Header */}
           <div className="mb-16">
             <div className="flex items-center justify-center mb-6">
@@ -79,27 +78,26 @@ export default function StartupCollaborationPage() {
               </h1>
               <Sparkles className="text-cyan-400 ml-2 animate-pulse" size={24} />
             </div>
-           
+
           </div>
 
           {/* Main Content Grid */}
           <div className="grid md:grid-cols-2 gap-12 mb-16">
-            
+
             {/* Left Side - We're inviting */}
-            <div className={`transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-            }`}>
+            <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+              }`}>
               <h2 className="text-2xl md:text-3xl text-white font-semibold mb-8">
                 We're inviting:
               </h2>
-              
+
               <div className="space-y-6">
                 {[
                   { icon: Users, text: "Talented builders", color: "from-green-400 to-emerald-500" },
                   { icon: Lightbulb, text: "Curious early users", color: "from-yellow-400 to-orange-500" },
                   { icon: DollarSign, text: "Mission-aligned investors", color: "from-purple-400 to-pink-500" }
                 ].map((item, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="group flex items-center p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 cursor-pointer transform hover:scale-105"
                     style={{ animationDelay: `${index * 200}ms` }}
@@ -116,20 +114,19 @@ export default function StartupCollaborationPage() {
             </div>
 
             {/* Right Side - Join us early */}
-            <div className={`transition-all duration-1000 delay-500 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}>
+            <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+              }`}>
               <h2 className="text-2xl md:text-3xl text-white font-semibold mb-8">
                 Join us early. Help shape what's next:
               </h2>
-              
+
               <div className="space-y-6">
                 {[
                   "Want to work with us?",
                   "Share your idea?",
                   "Want to invest?"
                 ].map((text, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="group flex items-center justify-between p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 cursor-pointer transform hover:scale-105"
                     style={{ animationDelay: `${(index + 3) * 200}ms` }}
@@ -137,9 +134,9 @@ export default function StartupCollaborationPage() {
                     <span className="text-lg md:text-xl text-gray-200 group-hover:text-white transition-colors duration-300">
                       {text}
                     </span>
-                    <ArrowRight 
-                      className="text-cyan-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" 
-                      size={20} 
+                    <ArrowRight
+                      className="text-cyan-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"
+                      size={20}
                     />
                   </div>
                 ))}
@@ -148,27 +145,26 @@ export default function StartupCollaborationPage() {
           </div>
 
           {/* CTA Button */}
-         {/* <a href="https://wa.me/qr/5F4Y5YHZUCCVK1" target="_blank" rel="noopener noreferrer"> */}
-         <a href="https://t.me/zentrixlab" target="_blank" rel="noopener noreferrer">
-  <div 
-  className={`transition-all duration-1000 delay-700 ${
-    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-  }`}
-  style={{ marginBottom: 0 }}>
+          {/* <a href="https://wa.me/qr/5F4Y5YHZUCCVK1" target="_blank" rel="noopener noreferrer"> */}
+          <a href="https://t.me/zentrixlab" target="_blank" rel="noopener noreferrer">
+            <div
+              className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+              style={{ marginBottom: 0 }}>
 
-    <button className="group relative px-12 py-3 text-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      
-      <div className="relative flex items-center">
-        JOIN US
-        <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
-      </div>
+              <button className="group relative px-12 py-3 text-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      {/* Button Shine Effect */}
-      <div className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse" />
-    </button>
-  </div>
-</a>
+                <div className="relative flex items-center">
+                  JOIN US
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
+                </div>
+
+                {/* Button Shine Effect */}
+                <div className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse" />
+              </button>
+            </div>
+          </a>
 
         </div>
       </div>
