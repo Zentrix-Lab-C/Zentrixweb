@@ -54,7 +54,7 @@ export default function ContactPage() {
   // 'Tik Tok': 'https://www.tiktok.com/@zentrixlab',
   'Discord': 'https://discord.com/invite/YZR3SBPp',
   'Telegram': 'https://t.me/zentrixlab',
-  'WhatsApp': 'https://chat.whatsapp.com/CKJp55a1RNoCX2tZEtxmIR',
+  // 'WhatsApp': 'https://chat.whatsapp.com/CKJp55a1RNoCX2tZEtxmIR',
 };
 
 
