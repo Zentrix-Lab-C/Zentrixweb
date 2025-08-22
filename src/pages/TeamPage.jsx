@@ -5,13 +5,55 @@ const TeamPage = () => {
   const [visibleCards, setVisibleCards] = useState([]);
 
   const teamMembers = [
-    { id: 1, name: "David Chidimma", role: "COO", image: "./assets/COO.jpg", bgColor: "from-red-500 to-pink-400" },
-    { id: 2, name: "Olagunju Oluwatobi", role: "Product Designer", image: "./assets/Ldesign.jpg", bgColor: "from-blue-600 to-indigo-500" },
-    { id: 3, name: "Ayodele Bello", role: "Product Designer", image: "./assets/Pdesign.png", bgColor: "from-gray-400 to-gray-200" },
-    { id: 4, name: "Gbadegesin Oluwatobi", role: "Product Manager", image: "./assets/Pmanager.jpg", bgColor: "from-green-500 to-lime-400" },
-    { id: 5, name: "Usman Umar", role: "Full-Stack Blockchain & AI Developer", image: "./assets/Fulldev.jpg", bgColor: "from-yellow-600 to-orange-500" },
-    { id: 6, name: "Victor Oluwapelumi", role: "Frontend Developer", image: "./assets/Frontdev.jpg", bgColor: "from-purple-600 to-blue-500" },
-    { id: 7, name: "Bade Olaniyi", role: "CEO & Founder", image: "./assets/CEO.jpg", bgColor: "from-teal-500 to-cyan-400" },
+    {
+      id: 1,
+      name: "David Chidimma",
+      role: "COO",
+      image: "./assets/COO.jpg",
+      bgColor: "from-red-500 to-pink-400",
+    },
+    {
+      id: 2,
+      name: "Olagunju Oluwatobi",
+      role: "Product Designer",
+      image: "./assets/Ldesign.jpg",
+      bgColor: "from-blue-600 to-indigo-500",
+    },
+    {
+      id: 3,
+      name: "Ayodele Bello",
+      role: "Product Designer",
+      image: "./assets/Pdesign.png",
+      bgColor: "from-gray-400 to-gray-200",
+    },
+    {
+      id: 4,
+      name: "Gbadegesin Oluwatobi",
+      role: "Product Manager",
+      image: "./assets/Pmanager.jpg",
+      bgColor: "from-green-500 to-lime-400",
+    },
+    {
+      id: 5,
+      name: "Usman Umar",
+      role: "Full-Stack Blockchain & AI Developer",
+      image: "./assets/Fulldev.jpg",
+      bgColor: "from-yellow-600 to-orange-500",
+    },
+    {
+      id: 6,
+      name: "Victor Oluwapelumi",
+      role: "Frontend Developer",
+      image: "./assets/Frontdev.jpg",
+      bgColor: "from-purple-600 to-blue-500",
+    },
+    {
+      id: 7,
+      name: "Bade Olaniyi",
+      role: "CEO & Founder",
+      image: "./assets/CEO.jpg",
+      bgColor: "from-teal-500 to-cyan-400",
+    },
   ];
 
   useEffect(() => {
@@ -23,7 +65,10 @@ const TeamPage = () => {
   }, []);
 
   const TeamCard = ({ member, index }) => {
-    const initials = member.name.split(" ").map((n) => n[0]).join("");
+    const initials = member.name
+      .split(" ")
+      .map((n) => n[0])
+      .join("");
     const isVisible = visibleCards.includes(index);
 
     return (
@@ -53,7 +98,9 @@ const TeamPage = () => {
             <h3 className="font-bold text-white text-base sm:text-lg group-hover:text-cyan-300">
               {member.name}
             </h3>
-            <p className="text-gray-200 dark:text-gray-300 text-xs sm:text-sm">{member.role}</p>
+            <p className="text-gray-200 dark:text-gray-300 text-xs sm:text-sm">
+              {member.role}
+            </p>
           </div>
         </div>
       </div>
@@ -62,7 +109,6 @@ const TeamPage = () => {
 
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white relative overflow-hidden flex flex-col items-center justify-center py-10 px-4">
-
       {/* Cinematic Glow Circles */}
       <div className="absolute -top-20 -left-20 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-cyan-400/20 dark:bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-purple-400/20 dark:bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -75,7 +121,11 @@ const TeamPage = () => {
             className="absolute w-[150%] h-[2px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"
             style={{ top: `${15 + i * 15}%` }}
             animate={{ x: ["0%", "50%", "0%"] }}
-            transition={{ duration: 8 + i, repeat: Infinity, ease: "easeInOut" }}
+            transition={{
+              duration: 8 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
         ))}
       </div>
@@ -102,7 +152,12 @@ const TeamPage = () => {
       <motion.div
         className="flex flex-row sm:flex-row space-x-4 sm:space-x-6 mb-8 sm:mb-10 z-10 overflow-x-auto sm:overflow-visible scrollbar-hide"
         animate={{ x: ["0%", "-3%", "0%"] }}
-        transition={{ repeat: Infinity, repeatType: "mirror", duration: 5, ease: "easeInOut" }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "mirror",
+          duration: 5,
+          ease: "easeInOut",
+        }}
       >
         {teamMembers.slice(0, 4).map((member, index) => (
           <TeamCard key={member.id} member={member} index={index} />
@@ -113,7 +168,12 @@ const TeamPage = () => {
       <motion.div
         className="flex flex-row sm:flex-row space-x-4 sm:space-x-6 z-10 overflow-x-auto sm:overflow-visible scrollbar-hide"
         animate={{ x: ["0%", "3%", "0%"] }}
-        transition={{ repeat: Infinity, repeatType: "mirror", duration: 5, ease: "easeInOut" }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "mirror",
+          duration: 5,
+          ease: "easeInOut",
+        }}
       >
         {teamMembers.slice(4).map((member, index) => (
           <TeamCard key={member.id} member={member} index={index + 4} />
