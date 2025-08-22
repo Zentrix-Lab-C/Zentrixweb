@@ -59,7 +59,8 @@ export default function ContactPage() {
 
 
   return (
-    <div className="bg-black text-white min-h-scree relative overflow-hidden">
+        <div className="bg-white text-gray-900 dark:bg-black dark:text-white relative overflow-hidden">
+
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Moving gradient orbs */}
@@ -109,7 +110,7 @@ export default function ContactPage() {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60"
+            className="absolute w-1 h-1 bg-cyan-400 dark:bg-cyan-300 rounded-full opacity-50 dark:opacity-60"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -130,7 +131,7 @@ export default function ContactPage() {
           <div className={`space-y-5 transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
           }`}>
-            <h2 className="text-4xl font-bold text-white mb-8 relative">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white relative">
               Contact Us
               <div className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-pulse" />
             </h2>
@@ -139,24 +140,28 @@ export default function ContactPage() {
               <div className="group flex items-center space-x-4 p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 transform hover:translate-x-2">
                 <Phone className="text-cyan-400 group-hover:scale-110 transition-transform duration-300" size={20} />
                 <div>
-                  <span className="text-gray-300 text-sm">Call Us:</span>
-                  <div className="text-white font-semibold">+234 707 428 3755</div>
+                  <span className="text-gray-700 dark:text-gary-300 text-sm">Call Us:</span>
+                  <div className="text-black dark:text-white font-semibold">+234 707 428 3755</div>
                 </div>
+                
               </div>
               
               <div className="group flex items-center space-x-4 p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 transform hover:translate-x-2">
                 <Mail className="text-cyan-400 group-hover:scale-110 transition-transform duration-300" size={20} />
                 <div>
-                  <span className="text-gray-300 text-sm">Email Us:</span>
-                  <div className="text-white font-semibold break-all">zentrixlab.new@gmail.com</div>
+                 <span className="text-sm text-gray-700 dark:text-gray-300">Email Us:</span>
+<div className="font-semibold text-black dark:text-white break-all">
+  zentrixlab.new@gmail.com
+</div>
+
                 </div>
               </div>
               
               <div className="group flex items-center space-x-4 p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 transform hover:translate-x-2">
                 <MapPin className="text-cyan-400 group-hover:scale-110 transition-transform duration-300" size={20} />
                 <div>
-                  <span className="text-gray-300 text-sm">Location:</span>
-                  <div className="text-white font-semibold">Oluyole Ibadan, Nigeria</div>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">Location:</span>
+                  <div className="font-semibold text-black dark:text-white break-all">Oluyole Ibadan, Nigeria</div>
                 </div>
               </div>
             </div>
@@ -182,7 +187,7 @@ export default function ContactPage() {
     rel="noopener noreferrer"
     className="group w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-600 transition-all duration-300 cursor-pointer transform hover:scale-110 hover:rotate-12 border border-white/20"
   >
-    <Linkedin className="w-6 h-6 text-white group-hover:text-white transition-colors duration-300" />
+    <Linkedin className="w-6 h-6 text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-300" />
   </a>
   
   {/* Instagram */}
@@ -224,7 +229,7 @@ export default function ContactPage() {
           <div className={`space-y-8 transition-all duration-1000 delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}>
-            <h2 className="text-4xl font-bold text-white mb-8 relative">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white relative">
               Community
               <div className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-pulse delay-300" />
             </h2>
@@ -236,10 +241,17 @@ export default function ContactPage() {
       href={communityLinks[platform]}
       target="_blank"
       rel="noopener noreferrer"
-      className="block group text-white text-lg p-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-400/50 hover:bg-white/10 transition-all duration-300 cursor-pointer transform hover:translate-x-2 hover:shadow-lg hover:shadow-purple-500/20"
+     className="block group text-lg p-2 rounded-lg 
+  bg-gray-100 dark:bg-white/5 
+  text-gray-900 dark:text-white
+  border border-gray-300 dark:border-white/10 
+  hover:border-purple-400/50 hover:bg-gray-200 dark:hover:bg-white/10 
+  transition-all duration-500 cursor-pointer 
+  transform hover:translate-x-2 hover:shadow-lg hover:shadow-purple-500/20"
+
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      <span className="group-hover:text-purple-300 transition-colors duration-300">{platform}</span>
+      <span className="font-semibold group-hover:text-purple-300 transition-colors duration-300">{platform}</span>
       <div className="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-purple-400 to-pink-500 transition-all duration-300 mt-1" />
     </a>
   ))}
@@ -251,7 +263,7 @@ export default function ContactPage() {
           <div className={`space-y-8 transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
           }`}>
-            <h2 className="text-4xl font-bold text-white mb-8 relative">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white relative">
               Menu
               <div className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full animate-pulse delay-500" />
             </h2>
@@ -280,7 +292,7 @@ export default function ContactPage() {
         className="group text-white text-lg p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:bg-white/10 transition-all duration-300 cursor-pointer transform hover:translate-x-2 hover:shadow-lg hover:shadow-emerald-500/20"
         style={{ animationDelay: `${index * 100}ms` }}
       >
-        <span className="group-hover:text-emerald-300 transition-colors duration-300">
+        <span className="group-hover:text-emerald-300 transition-colors duration-300 font-semibold text-black dark:text-white break-all">
           {item}
         </span>
         <div className="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-emerald-400 to-teal-500 transition-all duration-300 mt-1" />

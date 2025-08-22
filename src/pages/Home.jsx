@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   return (
-    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-black">
+    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-white text-black dark:bg-gray-900 dark:text-white">
 
 {/* Orbiting objects - hidden on mobile */}
 <div className="absolute inset-0 items-center justify-center z-[5] pointer-events-none hidden sm:flex">

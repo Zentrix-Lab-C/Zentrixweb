@@ -31,12 +31,12 @@ export default function StartupCollaborationPage() {
   );
 
   return (
-    <div className="min-h-scree bg-gradient-to-br from-gray-900 via-black to-gray-800 relative overflow-hidden">
+    <div className="min-h-scree bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-black dark:to-gray-800 relative overflow-hidden text-gray-900 dark:text-white">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Gradient Orbs */}
         <div
-          className="absolute w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-full blur-3xl transition-transform duration-1000"
+          className="absolute w-96 h-96 bg-gradient-to-r from-cyan-400/15 to-blue-500/15 dark:from-cyan-500/20 dark:to-blue-600/20 rounded-full blur-3xl"
           style={{
             transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
             left: '10%',
@@ -83,40 +83,48 @@ export default function StartupCollaborationPage() {
 
           {/* Main Content Grid */}
           <div className="grid md:grid-cols-2 gap-12 mb-16">
+{/* Left Side - We're inviting */}
+<div
+  className={`transition-all duration-1000 delay-300 ${
+    isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+  }`}
+>
+  <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-gray-800 dark:text-white">
+    We're inviting:
+  </h2>
 
-            {/* Left Side - We're inviting */}
-            <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-              }`}>
-              <h2 className="text-2xl md:text-3xl text-white font-semibold mb-8">
-                We're inviting:
-              </h2>
+  <div className="space-y-6">
+    {[
+      { icon: Users, text: "Talented builders", color: "from-green-400 to-emerald-500" },
+      { icon: Lightbulb, text: "Curious early users", color: "from-yellow-400 to-orange-500" },
+      { icon: DollarSign, text: "Mission-aligned investors", color: "from-purple-400 to-pink-500" },
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="group flex items-center p-2 rounded-xl 
+          bg-white border border-gray-200 hover:border-cyan-400/50 hover:bg-gray-50
+          dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10
+          transition-all duration-300 cursor-pointer transform hover:scale-105"
+      >
+        <div
+          className={`p-3 rounded-lg bg-gradient-to-r ${item.color} mr-4 
+            group-hover:scale-110 transition-transform duration-300`}
+        >
+          <item.icon className="text-white" size={24} />
+        </div>
+        <span className="text-lg md:text-xl text-gray-700 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
+          {item.text}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
 
-              <div className="space-y-6">
-                {[
-                  { icon: Users, text: "Talented builders", color: "from-green-400 to-emerald-500" },
-                  { icon: Lightbulb, text: "Curious early users", color: "from-yellow-400 to-orange-500" },
-                  { icon: DollarSign, text: "Mission-aligned investors", color: "from-purple-400 to-pink-500" }
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="group flex items-center p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 cursor-pointer transform hover:scale-105"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <div className={`p-3 rounded-lg bg-gradient-to-r ${item.color} mr-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <item.icon className="text-white" size={24} />
-                    </div>
-                    <span className="text-lg md:text-xl text-gray-200 group-hover:text-white transition-colors duration-300">
-                      {item.text}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* Right Side - Join us early */}
             <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
               }`}>
-              <h2 className="text-2xl md:text-3xl text-white font-semibold mb-8">
+              <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-gray-800 dark:text-white">
                 Join us early. Help shape what's next:
               </h2>
 
@@ -128,10 +136,10 @@ export default function StartupCollaborationPage() {
                 ].map((text, index) => (
                   <div
                     key={index}
-                    className="group flex items-center justify-between p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                    className="group flex items-center p-4 rounded-xl bg-white border border-gray-200 hover:border-cyan-400/50 hover:bg-gray-50 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 transition-all duration-300 cursor-pointer transform hover:scale-105"
                     style={{ animationDelay: `${(index + 3) * 200}ms` }}
                   >
-                    <span className="text-lg md:text-xl text-gray-200 group-hover:text-white transition-colors duration-300">
+                    <span className="text-lg md:text-xl text-gray-700 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
                       {text}
                     </span>
                     <ArrowRight
@@ -152,7 +160,7 @@ export default function StartupCollaborationPage() {
                 }`}
               style={{ marginBottom: 0 }}>
 
-              <button className="group relative px-12 py-3 text-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25">
+              <button className="group relative px-12 py-3 text-xl font-semibold text-white dark:text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="relative flex items-center">

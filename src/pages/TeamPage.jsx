@@ -33,7 +33,10 @@ const TeamPage = () => {
         }`}
       >
         <div
-          className={`w-full h-full relative group rounded-xl overflow-hidden border-2 sm:border-4 border-gray-700/50 bg-gradient-to-br ${member.bgColor} transition-all duration-500 group-hover:scale-105`}
+          className={`w-full h-full relative group rounded-xl overflow-hidden border-2 sm:border-4 
+            border-gray-300 dark:border-gray-700/50 
+            bg-gradient-to-br ${member.bgColor} 
+            transition-all duration-500 group-hover:scale-105`}
         >
           {member.image ? (
             <img
@@ -46,9 +49,11 @@ const TeamPage = () => {
               {initials}
             </div>
           )}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3 sm:p-4 text-center">
-            <h3 className="font-bold text-white text-base sm:text-lg group-hover:text-cyan-300">{member.name}</h3>
-            <p className="text-gray-300 text-xs sm:text-sm">{member.role}</p>
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent dark:from-black/90 dark:via-black/50 p-3 sm:p-4 text-center">
+            <h3 className="font-bold text-white text-base sm:text-lg group-hover:text-cyan-300">
+              {member.name}
+            </h3>
+            <p className="text-gray-200 dark:text-gray-300 text-xs sm:text-sm">{member.role}</p>
           </div>
         </div>
       </div>
@@ -56,11 +61,11 @@ const TeamPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden flex flex-col items-center justify-center py-10 px-4">
+    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white relative overflow-hidden flex flex-col items-center justify-center py-10 px-4">
 
       {/* Cinematic Glow Circles */}
-      <div className="absolute -top-20 -left-20 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute -top-20 -left-20 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-cyan-400/20 dark:bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-purple-400/20 dark:bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
 
       {/* Floating Gradient Lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -79,7 +84,7 @@ const TeamPage = () => {
       {[...Array(40)].map((_, i) => (
         <div
           key={i}
-          className="absolute w-1 h-1 bg-white/40 rounded-full"
+          className="absolute w-1 h-1 bg-gray-400 dark:bg-white/40 rounded-full"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,

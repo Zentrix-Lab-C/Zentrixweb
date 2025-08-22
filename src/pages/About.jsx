@@ -72,9 +72,9 @@ const About = () => {
   ];
 
   return (
-    <section className="bg-gray-950 text-white py-5 px-6 md:px-20 relative overflow-hidden">
+ <section className="bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-white py-5 px-6 md:px-20 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
+    <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-300 dark:from-gray-900 dark:via-gray-950 dark:to-black" />
       <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/3 right-1/6 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
       
@@ -119,7 +119,7 @@ const About = () => {
             className="text-center space-y-8"
           >
             <motion.div 
-              className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-8 md:p-12"
+              className="bg-white/70 dark:bg-gray-900/50 backdrop-blur-xl border border-gray-300 dark:border-gray-800/50 rounded-2xl p-8 md:p-12"
               whileHover={{ 
                 y: -5,
                 boxShadow: "0 25px 50px rgba(6, 182, 212, 0.1)"
@@ -143,7 +143,7 @@ const About = () => {
                 <span className="italic text-cyan-300">"Matrix."</span>
               </motion.p>
               
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <p className="font-semibold text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
                 Zentrix Lab is a futuristic innovation lab focused on building
                 human-aligned, intelligent technologies across AI, finance, robotics,
                 and digital infrastructure, especially for emerging markets like Africa.
@@ -267,7 +267,7 @@ const About = () => {
                 <h3 className="text-green-400 font-bold text-2xl md:text-3xl">Core Values</h3>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="font-semibold grid md:grid-cols-2 gap-4">
                 {coreValues.map((value, index) => (
                   <motion.div
                     key={index}
@@ -285,7 +285,7 @@ const About = () => {
                     >
                       {value.icon}
                     </motion.div>
-                    <span className="text-gray-200 leading-relaxed">{value.text}</span>
+                    <span className="text-gray-700 dark:text-gray-200 leading-relaxed">{value.text}</span>
                   </motion.div>
                 ))}
               </div>
@@ -295,7 +295,7 @@ const About = () => {
           {/* What We Stand For */}
           <motion.div 
             variants={sectionVariants}
-            className="group"
+            className="font-semibold group"
           >
             <motion.div 
               className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-8 md:p-12"

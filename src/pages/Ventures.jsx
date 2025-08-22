@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
 
 const Ventures = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,35 +67,38 @@ const Ventures = () => {
   ];
 
   return (
-    <div className="min-h-scree bg-gray-950 text-white overflow-hidden relative">
-      {/* Background Elements with zoom animation */}
-      <div className={`absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black transition-all duration-2000 ${
-        isVisible ? 'scale-100' : 'scale-110'
-      }`} />
-      
-      {/* Floating orbs with zoom and fade */}
-      <div className={`absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl transition-all duration-3000 ${
-        isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
-      }`} />
-      <div className={`absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl transition-all duration-3000 delay-500 ${
-        isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
-      }`} />
-      
-      {/* Grid Pattern with fade in */}
-      <div className={`absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:50px_50px] transition-opacity duration-2000 ${
-        isVisible ? 'opacity-100' : 'opacity-0'
-      }`} />
+    <div className="min-h-scree bg-white text-gray-900 dark:bg-gray-950 dark:text-white overflow-hidden relative">
+  {/* Background gradient */}
+  <div className={`absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-black transition-all duration-2000 ${
+    isVisible ? 'scale-100' : 'scale-110'
+  }`} />
+
+  {/* Floating orbs */}
+  <div className={`absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/10 dark:bg-cyan-500/10 rounded-full blur-3xl transition-all duration-3000 ${
+    isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+  }`} />
+  <div className={`absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl transition-all duration-3000 delay-500 ${
+    isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+  }`} />
+
+  {/* Grid pattern */}
+  <div className={`absolute inset-0 bg-[linear-gradient(rgba(0,0,0,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:50px_50px] transition-opacity duration-2000 ${
+    isVisible ? 'opacity-100' : 'opacity-0'
+  }`} />
 
       <div className="relative z-10 container mx-auto px-6 py-5">
         {/* Header with dramatic zoom in */}
         <div className={`text-center mb-10 transition-all duration-1500 ${
           isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-50 translate-y-20'
         }`}>
-          <h1 className={`text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent transition-all duration-2000 ${
-            isVisible ? 'scale-100' : 'scale-150'
-          }`}>
-            Our Ventures
-          </h1>
+         
+           <motion.h2 
+                      className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                       Our Ventures
+                    </motion.h2>
           <div className={`w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full transition-all duration-1500 delay-300 ${
             isVisible ? 'scale-x-100' : 'scale-x-0'
           }`} />
