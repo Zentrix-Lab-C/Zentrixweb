@@ -96,16 +96,16 @@ const Home = () => {
 
       <div className="absolute inset-0">
         {/* Base gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/30 via-cyan-900/20 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/30 to-black" />
 
         {/* Moving gradient overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/10 via-green-400/10 to-transparent animate-pulse"
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/1 to-transparent animate-pulse"
           style={{ animationDuration: "5s" }}
         />
 
         {/* Additional shifting glow layer */}
-        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-blue-500/5 via-green-300/5 to-transparent animate-[pulse_6s_infinite]" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-blue-500/5 to-transparent animate-[pulse_6s_infinite]" />
 
         {/* Floating particles */}
         {[...Array(40)].map((_, i) => (
@@ -190,11 +190,11 @@ const Home = () => {
       {/* Background layers */}
       <div className="absolute inset-0">
         {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/30 via-cyan-900/20 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/30 to-black" />
 
         {/* Moving gradient overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/10 via-green-400/10 to-transparent animate-pulse"
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent animate-pulse"
           style={{ animationDuration: "5s" }}
         />
 
