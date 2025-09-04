@@ -63,7 +63,7 @@ function App() {
         {isVisible && (
           <button
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 animate-bounce opacity-90 hover:opacity-100"
+            className="fixed bottom-6 right-3 bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 animate-bounce opacity-90 hover:opacity-100"
           >
             <FaArrowUp size={20} />
           </button>
