@@ -295,42 +295,6 @@ const TeamPage = () => {
                 </motion.div>
               </div>
             )}
-            
-            {/* Enhanced Overlay with Team Connection Indicators */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent 
-              opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-4 left-4 right-4">
-                <motion.div 
-                  className="flex items-center gap-2 mb-2"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileHover={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <MapPin size={14} className="text-cyan-400" />
-                  <span className="text-white/80 text-xs">{member.location}</span>
-                </motion.div>
-                <motion.div 
-                  className="flex items-center gap-2 mb-2"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileHover={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 0.1 }}
-                >
-                  <Calendar size={14} className="text-cyan-400" />
-                  <span className="text-white/80 text-xs">Joined {member.joinedDate}</span>
-                </motion.div>
-                
-                {/* Team Connection Indicator */}
-                <motion.div 
-                  className="flex items-center gap-2"
-                  initial={{ x: -20, opacity: 0 }}
-                  whileHover={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 0.2 }}
-                >
-                  <Users size={14} className="text-purple-400" />
-                  <span className="text-white/80 text-xs">{member.department} Team</span>
-                </motion.div>
-              </div>
-            </div>
           </div>
 
           {/* Enhanced Info Section */}
@@ -361,34 +325,6 @@ const TeamPage = () => {
               >
                 {member.department}
               </motion.span>
-              <div className="flex gap-2">
-                {member.social.linkedin && (
-                  <motion.div 
-                    className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center cursor-pointer"
-                    whileHover={{ 
-                      scale: 1.2, 
-                      backgroundColor: "rgba(0, 119, 181, 0.8)",
-                      rotate: [0, -10, 10, 0]
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Linkedin size={12} className="text-white" />
-                  </motion.div>
-                )}
-                {member.social.github && (
-                  <motion.div 
-                    className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center cursor-pointer"
-                    whileHover={{ 
-                      scale: 1.2, 
-                      backgroundColor: "rgba(51, 51, 51, 0.8)",
-                      rotate: [0, 10, -10, 0]
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Github size={12} className="text-white" />
-                  </motion.div>
-                )}
-              </div>
             </div>
           </div>
         </div>
@@ -396,154 +332,7 @@ const TeamPage = () => {
     );
   };
 
-  const Modal = ({ member, onClose }) => (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-        onClick={onClose}
-      >
-        <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.5, opacity: 0 }}
-          className="bg-white dark:bg-gray-900 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className={`relative h-48 bg-gradient-to-br ${member.bgColor} rounded-t-3xl`}>
-            {member.image ? (
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-24 h-24 rounded-full object-cover border-4 border-white absolute -bottom-12 left-6"
-              />
-            ) : (
-              <div className="w-24 h-24 rounded-full bg-white/20 border-4 border-white absolute -bottom-12 left-6 flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">
-                  {member.name.split(" ").map(n => n[0]).join("")}
-                </span>
-              </div>
-            )}
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-            >
-              ✕
-            </button>
-          </div>
-
-          <div className="p-6 pt-16">
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                {member.name}
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-2">
-                {member.role}
-              </p>
-              <p className="text-gray-500 dark:text-gray-400">
-                {member.bio}
-              </p>
-            </div>
-
-            {/* Info Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <MapPin className="text-cyan-500" size={20} />
-                <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
-                  <p className="text-gray-900 dark:text-white">{member.location}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <Calendar className="text-cyan-500" size={20} />
-                <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Joined</p>
-                  <p className="text-gray-900 dark:text-white">{member.joinedDate}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Skills */}
-            <div className="mb-6">
-              <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                <Users size={20} />
-                Skills
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {member.skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Achievements */}
-            <div className="mb-6">
-              <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                <Award size={20} />
-                Achievements
-              </h3>
-              <ul className="space-y-2">
-                {member.achievements.map((achievement, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center gap-2 text-gray-600 dark:text-gray-300"
-                  >
-                    <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                    {achievement}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Social Links */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                Contact
-              </h3>
-              <div className="flex gap-4">
-                <a
-                  href={`mailto:${member.social.email}`}
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                >
-                  <Mail size={16} />
-                  <span className="text-sm">Email</span>
-                </a>
-                {member.social.linkedin && (
-                  <a
-                    href={`https://${member.social.linkedin}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors"
-                  >
-                    <Linkedin size={16} />
-                    <span className="text-sm">LinkedIn</span>
-                  </a>
-                )}
-                {member.social.github && (
-                  <a
-                    href={`https://${member.social.github}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                  >
-                    <Github size={16} />
-                    <span className="text-sm">GitHub</span>
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  );
+ 
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black text-gray-900 dark:text-white relative overflow-hidden">
@@ -916,13 +705,7 @@ const TeamPage = () => {
         </motion.div>
       </div>
 
-      {/* Modal */}
-      {selectedMember && (
-        <Modal 
-          member={selectedMember} 
-          onClose={() => setSelectedMember(null)} 
-        />
-      )}
+      
     </div>
   );
 };
