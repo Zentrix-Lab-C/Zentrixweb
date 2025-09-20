@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Linkedin, Twitter, Github, MapPin, Calendar, Award, Users } from "lucide-react";
+import {
+  Mail,
+  Linkedin,
+  Twitter,
+  Github,
+  MapPin,
+  Calendar,
+  Award,
+  Users,
+} from "lucide-react";
 
 const TeamPage = () => {
   const [visibleCards, setVisibleCards] = useState([]);
@@ -23,8 +32,8 @@ const TeamPage = () => {
       social: {
         email: "bade@company.com",
         linkedin: "linkedin.com/in/bade-olaniyi",
-        twitter: "@badeolaniyi"
-      }
+        twitter: "@badeolaniyi",
+      },
     },
     {
       id: 2,
@@ -37,11 +46,14 @@ const TeamPage = () => {
       location: "Abuja, Nigeria",
       joinedDate: "March 2020",
       skills: ["Operations", "Process Optimization", "Team Management"],
-      achievements: ["Operational Excellence Award", "Process Innovation Leader"],
+      achievements: [
+        "Operational Excellence Award",
+        "Process Innovation Leader",
+      ],
       social: {
         email: "david@company.com",
-        linkedin: "linkedin.com/in/david-chidimma"
-      }
+        linkedin: "linkedin.com/in/david-chidimma",
+      },
     },
     {
       id: 3,
@@ -58,8 +70,8 @@ const TeamPage = () => {
       social: {
         email: "edak@company.com",
         linkedin: "linkedin.com/in/edak-ephraim",
-        twitter: "@edakdesigns"
-      }
+        twitter: "@edakdesigns",
+      },
     },
     {
       id: 4,
@@ -75,8 +87,8 @@ const TeamPage = () => {
       achievements: ["Content Marketing Excellence", "Brand Voice Champion"],
       social: {
         email: "grace@company.com",
-        linkedin: "linkedin.com/in/grace-olatinwo"
-      }
+        linkedin: "linkedin.com/in/grace-olatinwo",
+      },
     },
     {
       id: 5,
@@ -93,8 +105,8 @@ const TeamPage = () => {
       social: {
         email: "elizabeth@company.com",
         linkedin: "linkedin.com/in/elizabeth-agbana",
-        twitter: "@elizabethcmo"
-      }
+        twitter: "@elizabethcmo",
+      },
     },
     {
       id: 6,
@@ -110,8 +122,8 @@ const TeamPage = () => {
       achievements: ["Design Innovation Award", "User Experience Excellence"],
       social: {
         email: "hakeem@company.com",
-        linkedin: "linkedin.com/in/hakeem-omeiza"
-      }
+        linkedin: "linkedin.com/in/hakeem-omeiza",
+      },
     },
     {
       id: 7,
@@ -128,8 +140,8 @@ const TeamPage = () => {
       social: {
         email: "bolu@company.com",
         linkedin: "linkedin.com/in/boluwatife-ilerioluwa",
-        github: "github.com/boludev"
-      }
+        github: "github.com/boludev",
+      },
     },
     {
       id: 8,
@@ -146,8 +158,8 @@ const TeamPage = () => {
       social: {
         email: "victor@company.com",
         linkedin: "linkedin.com/in/victor-oluwapelumi",
-        github: "github.com/victordev"
-      }
+        github: "github.com/victordev",
+      },
     },
     {
       id: 9,
@@ -164,8 +176,8 @@ const TeamPage = () => {
       social: {
         email: "fayinminu@company.com",
         linkedin: "linkedin.com/in/fayinminu-emmanuel",
-        github: "github.com/fayinminu"
-      }
+        github: "github.com/fayinminu",
+      },
     },
     {
       id: 10,
@@ -182,8 +194,8 @@ const TeamPage = () => {
       social: {
         email: "abdulrafiu@company.com",
         linkedin: "linkedin.com/in/abdulrafiu-abolaji",
-        github: "github.com/abdulrafiu"
-      }
+        github: "github.com/abdulrafiu",
+      },
     },
     {
       id: 11,
@@ -199,8 +211,8 @@ const TeamPage = () => {
       achievements: ["Product Design Excellence", "User-Centered Design Award"],
       social: {
         email: "bamigboye@company.com",
-        linkedin: "linkedin.com/in/bamigboye-bamidele"
-      }
+        linkedin: "linkedin.com/in/bamigboye-bamidele",
+      },
     },
     {
       id: 12,
@@ -212,21 +224,35 @@ const TeamPage = () => {
       bio: "Data scientist turning insights into actionable business strategies.",
       location: "Remote",
       joinedDate: "November 2021",
-      skills: ["Machine Learning", "Python", "Data Visualization", "Statistics"],
+      skills: [
+        "Machine Learning",
+        "Python",
+        "Data Visualization",
+        "Statistics",
+      ],
       achievements: ["Data Innovation Award", "Analytics Excellence"],
       social: {
         email: "sarah@company.com",
         linkedin: "linkedin.com/in/sarah-johnson",
-        github: "github.com/sarahdata"
-      }
-    }
+        github: "github.com/sarahdata",
+      },
+    },
   ];
 
-  const departments = ["All", "Executive", "Engineering", "Design", "Marketing", "Operations", "Analytics"];
+  const departments = [
+    "All",
+    "Executive",
+    "Engineering",
+    "Design",
+    "Marketing",
+    "Operations",
+    "Analytics",
+  ];
 
-  const filteredMembers = filterRole === "All" 
-    ? teamMembers 
-    : teamMembers.filter(member => member.department === filterRole);
+  const filteredMembers =
+    filterRole === "All"
+      ? teamMembers
+      : teamMembers.filter((member) => member.department === filterRole);
 
   useEffect(() => {
     setVisibleCards([]);
@@ -250,13 +276,14 @@ const TeamPage = () => {
         animate={{
           opacity: isVisible ? 1 : 0,
           y: isVisible ? 0 : 50,
-          scale: isVisible ? 1 : 0.9
+          scale: isVisible ? 1 : 0.9,
         }}
         transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
         className="group cursor-pointer"
         onClick={() => setSelectedMember(member)}
       >
-        <div className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${member.bgColor} 
+        <div
+          className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${member.bgColor} 
           shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2
           border border-white/20 backdrop-blur-sm group-hover:border-white/40`}
         >
@@ -267,12 +294,12 @@ const TeamPage = () => {
               background: [
                 "linear-gradient(45deg, rgba(34, 211, 238, 0.2), rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2))",
                 "linear-gradient(45deg, rgba(236, 72, 153, 0.2), rgba(34, 211, 238, 0.2), rgba(168, 85, 247, 0.2))",
-                "linear-gradient(45deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2), rgba(34, 211, 238, 0.2))"
-              ]
+                "linear-gradient(45deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2), rgba(34, 211, 238, 0.2))",
+              ],
             }}
             transition={{ duration: 3, repeat: Infinity }}
           />
-          
+
           {/* Card Content */}
           <div className="aspect-[3/4] relative">
             {member.image ? (
@@ -283,11 +310,11 @@ const TeamPage = () => {
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center">
-                <motion.div 
+                <motion.div
                   className="text-6xl font-bold text-white/90"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.1,
-                    rotate: [0, -5, 5, 0] 
+                    rotate: [0, -5, 5, 0],
                   }}
                   transition={{ duration: 0.3 }}
                 >
@@ -302,26 +329,31 @@ const TeamPage = () => {
             {/* Team Connection Pulse Effect */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"
-              animate={{ x: ['-100%', '100%'] }}
-              transition={{ 
-                duration: 3, 
-                repeat: Infinity, 
+              animate={{ x: ["-100%", "100%"] }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
                 repeatDelay: 2,
-                ease: "easeInOut" 
+                ease: "easeInOut",
               }}
             />
-            
-            <motion.h3 
+
+            <motion.h3
               className="font-bold text-white text-lg mb-1 group-hover:text-cyan-300 transition-colors relative z-10"
               whileHover={{ scale: 1.02 }}
             >
               {member.name}
             </motion.h3>
-            <p className="text-white/80 text-sm mb-2 relative z-10">{member.role}</p>
+            <p className="text-white/80 text-sm mb-2 relative z-10">
+              {member.role}
+            </p>
             <div className="flex items-center justify-between relative z-10">
-              <motion.span 
+              <motion.span
                 className="px-2 py-1 bg-white/20 rounded-full text-xs text-white/90"
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.3)" }}
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "rgba(255,255,255,0.3)",
+                }}
               >
                 {member.department}
               </motion.span>
@@ -332,8 +364,6 @@ const TeamPage = () => {
     );
   };
 
- 
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black text-gray-900 dark:text-white relative overflow-hidden">
       {/* Enhanced Animated Background */}
@@ -342,11 +372,20 @@ const TeamPage = () => {
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute top-20 -right-20 w-60 h-60 bg-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-20 left-1/3 w-40 h-40 bg-pink-400/10 rounded-full blur-3xl animate-pulse"></div>
-        
+
         {/* Floating Network Connections */}
-        <svg className="absolute inset-0 w-full h-full opacity-20" style={{pointerEvents: 'none'}}>
+        <svg
+          className="absolute inset-0 w-full h-full opacity-20"
+          style={{ pointerEvents: "none" }}
+        >
           <defs>
-            <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient
+              id="connectionGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
               <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.8" />
               <stop offset="50%" stopColor="#a855f7" stopOpacity="0.6" />
               <stop offset="100%" stopColor="#ec4899" stopOpacity="0.4" />
@@ -356,23 +395,23 @@ const TeamPage = () => {
           {[...Array(8)].map((_, i) => (
             <motion.line
               key={i}
-              x1={`${10 + (i * 12)}%`}
+              x1={`${10 + i * 12}%`}
               y1={`${20 + Math.sin(i) * 30}%`}
-              x2={`${90 - (i * 8)}%`}
+              x2={`${90 - i * 8}%`}
               y2={`${80 - Math.cos(i) * 20}%`}
               stroke="url(#connectionGradient)"
               strokeWidth="2"
               strokeDasharray="5,5"
               initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ 
-                pathLength: [0, 1, 0.8, 1], 
-                opacity: [0, 0.8, 0.3, 0.8] 
+              animate={{
+                pathLength: [0, 1, 0.8, 1],
+                opacity: [0, 0.8, 0.3, 0.8],
               }}
               transition={{
                 duration: 4 + i * 0.5,
                 repeat: Infinity,
                 ease: "easeInOut",
-                delay: i * 0.3
+                delay: i * 0.3,
               }}
             />
           ))}
@@ -381,14 +420,14 @@ const TeamPage = () => {
         {/* Floating Team Collaboration Icons */}
         <motion.div
           className="absolute top-1/4 left-1/4"
-          animate={{ 
+          animate={{
             y: [0, -20, 0],
-            rotate: [0, 5, -5, 0]
+            rotate: [0, 5, -5, 0],
           }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
         >
           <div className="w-16 h-16 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10">
@@ -398,15 +437,15 @@ const TeamPage = () => {
 
         <motion.div
           className="absolute top-1/3 right-1/4"
-          animate={{ 
+          animate={{
             y: [0, 15, -5, 0],
-            rotate: [0, -3, 3, 0]
+            rotate: [0, -3, 3, 0],
           }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
+          transition={{
+            duration: 8,
+            repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
+            delay: 1,
           }}
         >
           <div className="w-12 h-12 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
@@ -420,15 +459,15 @@ const TeamPage = () => {
 
         <motion.div
           className="absolute bottom-1/4 left-1/3"
-          animate={{ 
+          animate={{
             y: [0, -10, 5, 0],
-            x: [0, 10, -5, 0]
+            x: [0, 10, -5, 0],
           }}
-          transition={{ 
-            duration: 7, 
-            repeat: Infinity, 
+          transition={{
+            duration: 7,
+            repeat: Infinity,
             ease: "easeInOut",
-            delay: 2
+            delay: 2,
           }}
         >
           <div className="w-14 h-14 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-xl flex items-center justify-center backdrop-blur-sm border border-white/10">
@@ -447,13 +486,13 @@ const TeamPage = () => {
         {/* Floating Geometric Shapes */}
         <motion.div
           className="absolute top-1/2 left-1/6"
-          animate={{ 
+          animate={{
             rotate: [0, 360],
-            y: [0, -30, 0]
+            y: [0, -30, 0],
           }}
-          transition={{ 
+          transition={{
             rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-            y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+            y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
           }}
         >
           <div className="w-8 h-8 bg-gradient-to-br from-yellow-400/30 to-orange-500/30 transform rotate-45 backdrop-blur-sm border border-white/10" />
@@ -461,13 +500,18 @@ const TeamPage = () => {
 
         <motion.div
           className="absolute bottom-1/3 right-1/6"
-          animate={{ 
+          animate={{
             rotate: [0, -360],
-            scale: [1, 1.2, 1]
+            scale: [1, 1.2, 1],
           }}
-          transition={{ 
+          transition={{
             rotate: { duration: 15, repeat: Infinity, ease: "linear" },
-            scale: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }
+            scale: {
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            },
           }}
         >
           <div className="w-10 h-10 border-2 border-indigo-400/40 rounded-full backdrop-blur-sm" />
@@ -485,13 +529,13 @@ const TeamPage = () => {
             animate={{
               y: [0, -100, 0],
               x: [0, Math.sin(i) * 50, 0],
-              opacity: [0, 1, 0]
+              opacity: [0, 1, 0],
             }}
             transition={{
               duration: 8 + Math.random() * 4,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: Math.random() * 5
+              delay: Math.random() * 5,
             }}
           />
         ))}
@@ -528,53 +572,53 @@ const TeamPage = () => {
           {/* Floating Elements Around Title */}
           <motion.div
             className="absolute -top-8 -left-8 w-4 h-4 bg-cyan-400/40 rounded-full"
-            animate={{ 
+            animate={{
               scale: [1, 1.5, 1],
-              rotate: [0, 180, 360]
+              rotate: [0, 180, 360],
             }}
-            transition={{ 
-              duration: 4, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
           />
           <motion.div
             className="absolute -top-4 -right-12 w-3 h-3 bg-purple-400/40 rounded-full"
-            animate={{ 
+            animate={{
               y: [0, -10, 0],
-              opacity: [0.4, 1, 0.4]
+              opacity: [0.4, 1, 0.4],
             }}
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity, 
+            transition={{
+              duration: 3,
+              repeat: Infinity,
               ease: "easeInOut",
-              delay: 1
+              delay: 1,
             }}
           />
-          
-          <motion.h1 
+
+          <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
             animate={{
-              backgroundPosition: ["0%", "100%", "0%"]
+              backgroundPosition: ["0%", "100%", "0%"],
             }}
             transition={{
               duration: 8,
               repeat: Infinity,
-              ease: "linear"
+              ease: "linear",
             }}
           >
             Meet Our Team
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Passionate innovators, creative problem-solvers, and dedicated professionals 
-            working together to build the future.
+            Passionate innovators, creative problem-solvers, and dedicated
+            professionals working together to build the future.
           </motion.p>
-          
+
           {/* Teamwork Connection Visualization */}
           <motion.div
             className="absolute -bottom-8 left-1/2 transform -translate-x-1/2"
@@ -589,12 +633,12 @@ const TeamPage = () => {
                   className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
                   animate={{
                     scale: [1, 1.5, 1],
-                    opacity: [0.3, 1, 0.3]
+                    opacity: [0.3, 1, 0.3],
                   }}
                   transition={{
                     duration: 2,
                     repeat: Infinity,
-                    delay: i * 0.2
+                    delay: i * 0.2,
                   }}
                 />
               ))}
@@ -624,7 +668,7 @@ const TeamPage = () => {
         </motion.div>
 
         {/* Team Grid with Enhanced Animations */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 relative"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -650,7 +694,7 @@ const TeamPage = () => {
                     duration: 6,
                     repeat: Infinity,
                     delay: row * 0.5,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                 />
               ))}
@@ -671,17 +715,17 @@ const TeamPage = () => {
                     duration: 8,
                     repeat: Infinity,
                     delay: col * 0.3,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                 />
               ))}
             </svg>
           </div>
-          
+
           {filteredMembers.map((member, index) => (
             <TeamCard key={member.id} member={member} index={index} />
           ))}
-          
+
           {/* Floating Team Stats */}
           <motion.div
             className="absolute -top-16 -right-8 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm rounded-2xl p-4 border border-white/20"
@@ -704,8 +748,6 @@ const TeamPage = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      
     </div>
   );
 };
