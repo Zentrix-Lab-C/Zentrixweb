@@ -61,9 +61,9 @@ export default function ContactPage() {
     // 'Facebook': 'https://web.facebook.com/zentrixlab?rdid=vZv7eQWwBSZAx79R&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1Ar13AisKp%2F%3F_rdc%3D1%26_rdr#',
     // 'Instagram': 'https://www.instagram.com/zentrixlab',
     // 'Tik Tok': 'https://www.tiktok.com/@zentrixlab',
-    Discord: "https://discord.com/invite/YZR3SBPp",
+    Discord: "https://discord.gg/yB84F7WH",
     Telegram: "https://t.me/zentrixlab",
-    // 'WhatsApp': 'https://chat.whatsapp.com/CKJp55a1RNoCX2tZEtxmIR',
+    WhatsApp: 'https://chat.whatsapp.com/Fzy7PE2PWHP3GmGXZOkVrI'
   };
 
   return (
