@@ -12,6 +12,7 @@ const Ventures = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  
   const ventures = [
     {
       id: "boma",
